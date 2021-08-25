@@ -199,11 +199,11 @@ const updateUI = function (acc) {
 }
 
 
-// //fake always logged in
-// currentAccount = account1;
-// updateUI(currentAccount);
-// containerApp.style.opacity = 100;
-// ///
+//fake always logged in
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
+///
 
 
 
