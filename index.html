@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+    <script
+      src="https://kit.fontawesome.com/572092f915.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>RAFABANK | Banco Minimalista</title>
+  </head>
+  <body>
+    <script defer src="script.js"></script>
+
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="img/logo.png"
+          alt="=RAFABANK logo"
+          class="nav__logo"
+          id="logo"
+        />
+        <div class="nav__link nav__link-toggle">
+          <i class="fas fa-align-justify fa-5x"></i>
+        </div>
+
+        <ul class="nav__links Navbar__Items--right">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Funcionalidades</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operações</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Depoimentos</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Abrir sua conta</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              id="link__app"
+              class="nav__link nav__link--btn2"
+              href="/app/index.html"
+              >Site do App</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <h1>
+          Quando o
+          <!-- Green highlight effect -->
+          <span class="highlight">banco</span>
+          encontra o <br />
+          <span class="highlight">minimalismo</span>
+        </h1>
+        <h4>
+          Uma experiência bancária mais simples para uma vida mais simples.
+        </h4>
+        <button class="btn--text btn--scroll-to">Saiba mais &DownArrow;</button>
+        <img
+          src="img/hero.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        />
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Funcionalidades</h2>
+        <h3 class="section__header">
+          Tudo que você precisa em um banco moderno e muito mais.
+        </h3>
+      </div>
+
+      <div class="features">
+        <img
+          src="img/digital-lazy.jpg"
+          data-src="img/digital.jpg"
+          alt="Computer"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Banco 100% digital</h5>
+          <p>
+            App criado para oferecer um banco completo na palma da sua mão, Seja
+            para realizar transferências, seja para consultas diversas de
+            entradas e saídas, transferências entre contas, empréstimo para o
+            financiamento da casa sua própria ou pra tudo que você imaginar.
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-trending-up"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Veja seu dinheiro crescer</h5>
+          <p>
+            Você no controle: receba, movimente e guarde seu dinheiro de um
+            jeito simples.<br />
+            Seu dinheiro pode virar mais dinheiro. Na conta do RAFABANK, seu
+            dinheiro tem rendimento a 100% do CDI e fica disponível para ser
+            usado a qualquer momento.
+          </p>
+        </div>
+        <img
+          src="/img/grow-lazy.jpg"
+          data-src="img/grow.jpg"
+          alt="Plant"
+          class="features__img lazy-img"
+        />
+
+        <img
+          src="/img/card-lazy.jpg"
+          data-src="img/card.jpg"
+          alt="Credit card"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-credit-card"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Cartão de crédito grátis</h5>
+          <p>
+            Cartão Internacional RAFABANK Mastercard®<br />
+            Facilidade e segurança para você em mais de 30 milhões de
+            estabelecimentos, além dos benefícios Mastercard.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Operações</h2>
+        <h3 class="section__header">Tudo o mais simples possível.</h3>
+      </div>
+
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="
+              btn
+              operations__tab operations__tab--1 operations__tab--active
+            "
+            data-tab="1"
+          >
+            <span>01</span>Transferencias Instantâneas
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+            <span>02</span>Empréstimo na hora
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+            <span>03</span>Fechamento de conta Instantâneo
+          </button>
+        </div>
+        <div
+          class="
+            operations__content
+            operations__content--1
+            operations__content--active
+          "
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-upload"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Transfira dinheiro para qualquer um, instantaneamente! Sem taxas,
+            sem enrolação.
+          </h5>
+          <p>
+            Envie e receba pagamentos em segundos. Rápido assim. Ganhe tempo,
+            faça pagamentos por aproximação. O cartão é ainda mais prático com a
+            função contactless. Não precisa inserir cartão na maquininha, nem
+            colocar a senha. De quebra, ainda evita contato com dinheiro.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-home"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Compre uma casa ou realize os seus sonhos, com empréstimos
+            imediatos.
+          </h5>
+          <p>
+            Com a gente você faz o seu pedido de forma 100% digital e pode
+            realizar seus sonhos e objetivos. Confira nossas vantagens: A oferta
+            ideal para o seu perfil financeiro; Taxas de juros a partir de 0,99%
+            a.m.; Crédito sem burocracia; Dinheiro rápido direto na sua conta.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Não precisa mais de sua conta? Sem problemas! Feche-a imediatamente.
+          </h5>
+          <p>
+            Feche sua conta em minutos, sem burocracia, de onde você estiver e
+            sem taxas.<br />Confirme seu usuário, o PIN e pronto!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title section__title--testimonials">
+        <h2 class="section__description">Ainda não se convenceu?</h2>
+        <h3 class="section__header">
+          Milhões de RAFABANKers já estão tornando suas vidas mais simples.
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Finalmente livre dos bancos tradicionais!
+            </h5>
+            <blockquote class="testimonial__text">
+              Tenho uma empresa com minha família e para uma pequena empresa
+              como a nossa, precisávamos ter alguém que atendesse às nossas
+              necessidades. O RAFABANK estudou como eles poderiam nos ajudar a
+              resolver problemas. Isso era algo que nem sempre encontramos,
+              especialmente com os bancos maiores.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/img/user-3.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Francisco Gomes</h6>
+              <p class="testimonial__location">São Paulo, BR</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              O último passo para se tornar um minimalista completo!
+            </h5>
+            <blockquote class="testimonial__text">
+              Minha experiência com o RAFABANK tem sido muito favorável, pois
+              eles têm serviços bancários online. Quando preciso transferir
+              fundos e pagar contas, isso pode ser feito em poucos cliques. Tem
+              sido uma experiência positiva. Meu tempo é limitado, então o banco
+              deve ser rápido e eficaz.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/img/user-2.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Jessica Almeida</h6>
+              <p class="testimonial__location">Porto Alegre, BR</p>
+            </address>
+          </div>
+        </div>
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Melhor decisão financeira que já fiz!
+            </h5>
+            <blockquote class="testimonial__text">
+              Sou cliente há muitos anos. Sempre fui tratado com respeito e
+              qualquer dúvida que já tive sobre minhas contas foi respondida de
+              forma rápida e muito profissional.
+            </blockquote>
+            <address class="testimonial__author">
+              <img src="/img/user-1.jpg" alt="" class="testimonial__photo" />
+              <h6 class="testimonial__name">Pedro Barbosa</h6>
+              <p class="testimonial__location">Lisboa, PT</p>
+            </address>
+          </div>
+        </div>
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">
+          O melhor dia para ingressar no RAFABANK foi há um ano. O segundo
+          melhor é hoje!
+        </h3>
+      </div>
+      <button class="btn btn--show-modal">Abra sua conta de graça!</button>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">Sobre</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Planos</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Termos de Uso</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Política de Privacidade</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Carreiras</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Entre em Contato</a>
+        </li>
+      </ul>
+      <img src="/img/icon.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a
+          class="footer__link twitter-link"
+          target="_blank"
+          href="https://www.linkedin.com/in/rafael-dona/"
+          >Rafael Doná</a
+        >.
+      </p>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Abra sua conta em apenas <br />
+        <span class="highlight">5 minutos</span>
+      </h2>
+      <form class="modal__form">
+        <label>Nome</label>
+        <input type="text" />
+        <label>Sobrenome</label>
+        <input type="text" />
+        <label>Email</label>
+        <input type="email" />
+        <button class="btn">continuar &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
