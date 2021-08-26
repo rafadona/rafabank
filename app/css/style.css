@@ -354,7 +354,8 @@ h2 {
     flex-direction: column;
   }
   .movements {
-    max-height: 300px;
+    /* max-height: 300px; */
+    max-height: 46.875rem;
     overflow: scroll;
   }
 
