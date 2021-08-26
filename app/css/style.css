@@ -91,7 +91,6 @@ nav {
 
 /* MAIN */
 .app {
-  /* border: solid; */
   position: relative;
   max-width: 100rem;
   margin: 4rem auto;
@@ -361,17 +360,5 @@ h2 {
 
   .summary {
     flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 399px) {
-  /* .summary__value {
-    font-size: 2rem;
-    margin-right: 1rem;
-  } */
-  .label__juros {
-    margin-left: auto;
-    margin-right: auto;
-    white-space: normal;
   }
 }
