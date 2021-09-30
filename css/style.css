@@ -193,7 +193,6 @@ img {
 
 /* HEADER */
 .header {
-  padding: 0 3rem;
   height: 100rem;
   display: flex;
   flex-direction: column;
@@ -202,14 +201,12 @@ img {
 
 .header__title {
   flex: 1;
-
   max-width: 115rem;
   display: grid;
   grid-template-columns: 3fr 2fr;
   row-gap: 3rem;
   align-content: center;
   justify-content: center;
-
   align-items: start;
   justify-items: start;
 }
@@ -328,10 +325,10 @@ h4 {
 .operations__tab-container {
   display: flex;
   justify-content: center;
+  gap: 2.5rem;
 }
 
 .operations__tab {
-  margin-right: 2.5rem;
   transform: translateY(-50%);
 }
 
@@ -365,7 +362,6 @@ h4 {
 .operations__content {
   display: none;
 
-  /* JUST PRESENTATIONAL */
   font-size: 1.7rem;
   padding: 2.5rem 7rem 6.5rem 7rem;
 }
@@ -605,10 +601,7 @@ h4 {
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
-}
-
-.footer__item {
-  margin-right: 4rem;
+  gap: 4rem;
 }
 
 .footer__link {
@@ -735,6 +728,16 @@ h4 {
     align-self: flex-end;
   }
 
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1.35;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
   #logo {
     display: flex;
     align-self: flex-start;
@@ -743,7 +746,9 @@ h4 {
   .header__title {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    margin: 0 auto;
   }
 
   .header__img {
@@ -777,7 +782,7 @@ h4 {
     display: flex;
   }
 
-  .section__header,
+  .section__title,
   .section__description {
     text-align: center;
   }
@@ -789,6 +794,9 @@ h4 {
   .features {
     display: flex;
     flex-direction: column;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
   }
 
   .features__feature {
@@ -801,7 +809,42 @@ h4 {
     cursor: pointer;
   }
 
+  .footer {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
   .Navbar__Items--right {
     margin-left: auto;
+  }
+
+  .operations__tab-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .operations__tab {
+    transform: translateX(0%);
+  }
+
+  .operations__tab--active {
+    transform: translateX(3%);
+  }
+
+  .operations__content--active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .operations__content {
+    padding: 0;
+    text-align: center;
+    margin-top: 1rem;
   }
 }

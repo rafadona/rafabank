@@ -30,7 +30,7 @@ function removeToggle() {
 };
 
 function addToggle() {
-  const navs = document.querySelectorAll('.nav__links')
+  const navs = document.querySelectorAll('.nav__links');
 
   navs.forEach(nav => nav.classList.add('nav__toggle-show'));
 }
@@ -50,9 +50,9 @@ document.addEventListener('keydown', function (e) {
 
 
 btnScrollTo.addEventListener(`click`, function (e) {
-  section1.scrollIntoView({ behavior: `smooth` })
+  section1.scrollIntoView({ behavior: `smooth` });
   removeToggle();
-})
+});
 
 document.querySelector(`.nav__links`).addEventListener(`click`, function (e) {
   e.preventDefault();
@@ -63,15 +63,15 @@ document.querySelector(`.nav__links`).addEventListener(`click`, function (e) {
     document.querySelector(id).scrollIntoView({ behavior: `smooth` });
   }
   removeToggle();
-})
+});
 
 document.querySelector(`#link__app`).addEventListener(`click`, function (e) {
   e.stopPropagation();
-})
+});
 
 document.querySelector(`.btn--show-modal`).addEventListener(`click`, function (e) {
   e.stopPropagation();
-})
+});
 
 
 
@@ -81,9 +81,9 @@ tabsContanier.addEventListener(`click`, function (e) {
   tabs.forEach(t => t.classList.remove(`operations__tab--active`));
   clicked.classList.add(`operations__tab--active`);
 
-  tabsContent.forEach(c => c.classList.remove(`operations__content--active`))
+  tabsContent.forEach(c => c.classList.remove(`operations__content--active`));
   document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add(`operations__content--active`);
-})
+});
 
 const handleHover = function (e, opacity) {
   if (e.target.classList.contains(`nav__link`)) {
@@ -99,19 +99,19 @@ const handleHover = function (e, opacity) {
     logo.style.opacity = opacity;
 
   }
-}
+};
 
 
 const header = document.querySelector(`.header`);
 const navHeight = nav.getBoundingClientRect().height;
 nav.addEventListener(`mouseover`, function (e) {
   handleHover(e, 0.5);
-})
+});
 nav.addEventListener(`mouseout`, function (e) {
   handleHover(e, 1);
 
 
-})
+});
 
 
 const stickyNav = function (entries) {
@@ -139,16 +139,16 @@ const revealSection = function (entries, observer) {
   entry.target.classList.remove(`section--hidden`);
   observer.unobserve(entry.target);
 
-}
+};
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0.25,
-})
+});
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add(`section--hidden`)
-})
+  section.classList.add(`section--hidden`);
+});
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
@@ -157,7 +157,7 @@ const loadImg = function (entries, observer) {
 
   entry.target.addEventListener(`load`, function () {
     entry.target.classList.remove(`lazy-img`);
-  })
+  });
   observer.unobserve(entry.target);
 };
 
@@ -260,7 +260,7 @@ slider();
 
 
 function classToggle() {
-  const navs = document.querySelectorAll('.nav__links')
+  const navs = document.querySelectorAll('.nav__links');
 
   navs.forEach(nav => nav.classList.toggle('nav__toggle-show'));
 
