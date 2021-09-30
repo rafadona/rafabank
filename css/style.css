@@ -51,7 +51,7 @@ body {
 }
 
 .section__description {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -121,7 +121,6 @@ img {
   z-index: 100;
 }
 
-/* nav and stickly class at the same time */
 .nav.sticky {
   position: fixed;
   background-color: rgb(243, 243, 243, 0.95);
