@@ -399,6 +399,10 @@ h2 {
   display: none;
 }
 
+.hide {
+  animation: hide-modal 0.6s ease-in-out both;
+}
+
 @keyframes show-modal {
   0% {
     transform: scale(0);

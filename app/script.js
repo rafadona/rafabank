@@ -193,7 +193,9 @@ const calcDisplaySumary = function (acc) {
 };
 
 const showModal = function (message, title = 'Algo deu errado!', type = 'alert') {
-  errorModal.classList.toggle('hidden');
+  errorModal.classList.remove('hidden');
+  errorModal.classList.remove('hide');
+
   errorModalTitle.textContent = `${title}`;
   errorModalMessage.textContent = `${message}`;
   errorModalImage.src = `./images/${type}.png`;
@@ -208,9 +210,9 @@ const updateUI = function (acc) {
 
 
 //fake always logged in
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 ///
 
 
@@ -378,5 +380,5 @@ labelBalance.addEventListener(`click`, function (e) {
 btnModal.addEventListener('click', function (e) {
   e.preventDefault();
 
-  errorModal.classList.add('hidden');
+  errorModal.classList.add('hide');
 });
