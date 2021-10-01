@@ -48,7 +48,7 @@ const account1 = {
     '2021-08-16T10:51:36.790Z',
   ],
   currency: 'BRL',
-  locale: 'pt-BR', // de-DE
+  locale: 'pt-BR',
 };
 
 const account2 = {
@@ -67,8 +67,8 @@ const account2 = {
     '2020-06-25T18:49:59.371Z',
     '2021-08-10T12:01:20.894Z',
   ],
-  currency: 'USD',
-  locale: 'en-US',
+  currency: 'BRL',
+  locale: 'pt-BR',
 };
 
 const accounts = [account1, account2];
@@ -98,6 +98,12 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+
+const errorModal = document.querySelector('.modal');
+const errorModalMessage = document.querySelector('.modal__p');
+const errorModalTitle = document.querySelector('.modal__title');
+const errorModalImage = document.getElementById('modal__img');
+const btnModal = document.querySelector('.modal--btn');
 
 
 let currentAccount, transferAccount, timer;
@@ -186,6 +192,14 @@ const calcDisplaySumary = function (acc) {
 
 };
 
+const showModal = function (message, title = 'Algo deu errado!', type = 'alert') {
+  errorModal.classList.toggle('hidden');
+  errorModalTitle.textContent = `${title}`;
+  errorModalMessage.textContent = `${message}`;
+  errorModalImage.src = `./images/${type}.png`;
+
+};
+
 const updateUI = function (acc) {
   displayMovements(acc);
   calcDisplayBalance(acc);
@@ -242,8 +256,7 @@ btnLogin.addEventListener(`click`, function (e) {
     timer = startLogoutTimer();
     updateUI(currentAccount);
   } else {
-    console.log(`Não foi possivel logar`);
-    containerApp.style.opacity = 0;
+    showModal('Verifique se o usuário e senha estão corretos.', 'Não foi possível logar!', 'alert');
   }
   const now = new Date();
   const options = {
@@ -255,8 +268,6 @@ btnLogin.addEventListener(`click`, function (e) {
     // weekday: `long`,
   };
 
-  // const locale = navigator.language;
-  // console.log(locale);
   labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
 
 
@@ -271,11 +282,9 @@ btnTransfer.addEventListener(`click`, function (e) {
 
   if (currentAccount.username !== ((inputTransferTo.value).toLowerCase()) && ((inputTransferTo.value).toLowerCase()) === transferAccount?.username) {
     if (currentAccount.balance < amount) {
-      return console.log(`valor de transferencia eh maior do que o saldo`);
+      return showModal('A quantia da transferência é maior do que o seu saldo!', "Atenção!");
     } else if (amount <= 0) {
-      return console.log(`valor menor ou igual a zero`);
-    } else {
-      console.log(`valor permitido`);
+      return showModal('Quantia igual a zero!');
     }
 
     currentAccount.balance = currentAccount.balance - amount;
@@ -286,11 +295,10 @@ btnTransfer.addEventListener(`click`, function (e) {
     transferAccount.movementsDates.push(new Date().toISOString());
     updateUI(currentAccount);
 
-    console.log(`Transferencia para ${transferAccount.owner} de ${transferAccount.movements.slice(-1)} feita`);
-
+    showModal(`Transferência de R$ ${transferAccount.movements.slice(-1)} para ${transferAccount.owner} feita com sucesso!`, `Sucesso!`, 'success');
 
   } else {
-    console.log(`nao eh possivel fazer a transferencia`);
+    showModal('Por favor, preencha os campos corretamente.', "Não foi possível realizar a transferência!");
   }
 
   inputTransferAmount.value = inputTransferTo.value = ``;
@@ -306,12 +314,14 @@ btnClose.addEventListener(`click`, function (e) {
   if (currentAccount.username === inputCloseUsername.value.toLowerCase() && currentAccount.pin === Number(inputClosePin.value)) {
     const index = accounts.findIndex(acc => acc.username === currentAccount.username);
     accounts.splice(index, 1);
+    showModal("Sua conta foi deletada com sucesso!", "Sucesso!", "success");
     containerApp.style.opacity = 0;
     labelWelcome.textContent = `Faça o login em sua conta para começar`;
 
 
+
   } else {
-    return console.log(`nao deu pra deletar a conta`);
+    return showModal('Por favor, preencha os campos corretamente.', "Não foi possível deletar sua conta!");
   }
 
   inputCloseUsername.value = inputClosePin.value = ``;
@@ -328,10 +338,14 @@ btnLoan.addEventListener(`click`, function (e) {
     currentAccount.balance += amount;
     currentAccount.movements.push(amount);
     currentAccount.movementsDates.push(new Date().toISOString());
+    showModal(`Quantia de R$${amount} foi concedida!`, 'Empréstimo aprovado!', 'success');
     updateUI(currentAccount);
+
+  } else if (amount <= 0) {
+    showModal('Por favor, preencha os campos corretamente.', "Não foi possível solicitar o empréstimo.");
   }
 
-  // console.log(loan);
+
   inputLoanAmount.value = ``;
   clearInterval(timer);
   timer = startLogoutTimer();
@@ -361,3 +375,8 @@ labelBalance.addEventListener(`click`, function (e) {
 
 });
 
+btnModal.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  errorModal.classList.add('hidden');
+});
