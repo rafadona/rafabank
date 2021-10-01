@@ -4,13 +4,7 @@
 /////////////////////////////////////////////////
 // BANKIST APP
 
-// // Data
-// const account1 = {
-//   owner: 'Jonas Schmedtmann',
-//   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
-//   interestRate: 1.2, // %
-//   pin: 1111,
-// };
+
 
 // const account2 = {
 //   owner: 'Jessica Davis',
@@ -172,8 +166,8 @@ const calcBalance = function (acc) {
 const createBalance = function (accs) {
   accs.forEach(function (acc) {
     acc.balance = calcBalance(acc);
-  })
-}
+  });
+};
 createBalance(accounts);
 
 const calcDisplayBalance = function (acc) {
@@ -190,13 +184,13 @@ const calcDisplaySumary = function (acc) {
   const interest = acc.movements.filter(mov => mov > 0).map(deposit => (deposit * acc.interestRate / 100)).filter(int => int >= 1).reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = formtarCur(interest, acc.locale, acc.currency);
 
-}
+};
 
 const updateUI = function (acc) {
   displayMovements(acc);
   calcDisplayBalance(acc);
   calcDisplaySumary(acc);
-}
+};
 
 
 //fake always logged in
@@ -231,7 +225,7 @@ const startLogoutTimer = function () {
   const timer = setInterval(tick, 1000);
 
   return timer;
-}
+};
 
 
 btnLogin.addEventListener(`click`, function (e) {
@@ -240,7 +234,7 @@ btnLogin.addEventListener(`click`, function (e) {
   currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value.toLowerCase());
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
-    labelWelcome.textContent = `Bem-vindo(a), ${currentAccount.owner.split(` `)[0]}`
+    labelWelcome.textContent = `Bem-vindo(a), ${currentAccount.owner.split(` `)[0]}`;
     containerApp.style.opacity = 100;
     inputLoginUsername.value = inputLoginPin.value = ``;
     inputLoginPin.blur();
@@ -266,13 +260,13 @@ btnLogin.addEventListener(`click`, function (e) {
   labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
 
 
-})
+});
 
 
 btnTransfer.addEventListener(`click`, function (e) {
   e.preventDefault();
 
-  transferAccount = accounts.find(acc => acc.username === inputTransferTo.value.toLowerCase())
+  transferAccount = accounts.find(acc => acc.username === inputTransferTo.value.toLowerCase());
   const amount = Number(inputTransferAmount.value);
 
   if (currentAccount.username !== ((inputTransferTo.value).toLowerCase()) && ((inputTransferTo.value).toLowerCase()) === transferAccount?.username) {
@@ -303,7 +297,7 @@ btnTransfer.addEventListener(`click`, function (e) {
   clearInterval(timer);
   timer = startLogoutTimer();
 
-})
+});
 
 
 btnClose.addEventListener(`click`, function (e) {
@@ -321,14 +315,14 @@ btnClose.addEventListener(`click`, function (e) {
   }
 
   inputCloseUsername.value = inputClosePin.value = ``;
-})
+});
 
 
 btnLoan.addEventListener(`click`, function (e) {
   e.preventDefault();
 
   const amount = Math.floor(inputLoanAmount.value);
-  const loan = currentAccount.movements.some(mov => mov >= (0.1 * amount))
+  const loan = currentAccount.movements.some(mov => mov >= (0.1 * amount));
 
   if (loan && amount > 0) {
     currentAccount.balance += amount;
@@ -342,7 +336,7 @@ btnLoan.addEventListener(`click`, function (e) {
   clearInterval(timer);
   timer = startLogoutTimer();
 
-})
+});
 
 
 let sorted = false;
@@ -359,11 +353,11 @@ labelBalance.addEventListener(`click`, function (e) {
 
   const movementsUI = Array.from(document.querySelectorAll(`.movements__value`), el => Number(el.textContent.replace(`€`, ``))
 
-  )
+  );
   console.log(movementsUI);
 
   clearInterval(timer);
   timer = startLogoutTimer();
 
-})
+});
 
