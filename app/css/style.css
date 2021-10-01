@@ -394,6 +394,7 @@ h2 {
   font-weight: 400;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  margin: 0 auto;
 }
 .hidden {
   display: none;
@@ -464,5 +465,45 @@ h2 {
   .balance__value {
     font-size: 4rem;
     font-weight: 400;
+  }
+
+  .modal {
+    top: 60%;
+    left: 15%;
+  }
+
+  .modal__img {
+    margin-top: 24px;
+  }
+  .modal__title {
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 14px 0 5px 0;
+  }
+
+  .modal__p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    margin: 0;
+    padding: 10px 30px;
+  }
+
+  .modal--btn {
+    position: absolute;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f65656;
+    color: #fff;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin: 0 auto;
   }
 }

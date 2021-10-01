@@ -210,9 +210,9 @@ const updateUI = function (acc) {
 
 
 //fake always logged in
-// currentAccount = account1;
-// updateUI(currentAccount);
-// containerApp.style.opacity = 100;
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
 ///
 
 
@@ -259,6 +259,8 @@ btnLogin.addEventListener(`click`, function (e) {
     updateUI(currentAccount);
   } else {
     showModal('Verifique se o usuário e senha estão corretos.', 'Não foi possível logar!', 'alert');
+    containerApp.style.opacity = 0;
+
   }
   const now = new Date();
   const options = {
