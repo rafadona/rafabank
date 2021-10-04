@@ -360,6 +360,7 @@ h2 {
   text-align: center;
   overflow: hidden;
   animation: show-modal 0.7s ease-in-out;
+  z-index: 20;
 }
 
 .modal__img {
@@ -400,6 +401,12 @@ h2 {
   display: none;
 }
 
+.div--sticky {
+  top: 40%;
+  left: 40%;
+  position: sticky;
+  z-index: 20;
+}
 .hide {
   animation: hide-modal 0.6s ease-in-out both;
 }
@@ -468,42 +475,7 @@ h2 {
   }
 
   .modal {
-    top: 70%;
-    left: 15%;
-  }
-
-  .modal__img {
-    margin-top: 24px;
-  }
-  .modal__title {
-    display: block;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
-    margin: 14px 0 5px 0;
-  }
-
-  .modal__p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 19px;
-    margin: 0;
-    padding: 10px 30px;
-  }
-
-  .modal--btn {
-    position: absolute;
-    height: 40px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #f65656;
-    color: #fff;
-    line-height: 40px;
-    font-size: 14px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    margin: 0 auto;
+    top: 0;
+    left: 10vw;
   }
 }
