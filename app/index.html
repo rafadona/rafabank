@@ -9,6 +9,13 @@
       href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./script.js"></script>
@@ -24,21 +31,31 @@
       </div>
 
       <p class="welcome">Faça o login em sua conta para começar</p>
-      <form class="login">
-        <input
-          type="text"
-          placeholder="usuário"
-          class="login__input login__input--user"
-        />
 
-        <input
-          type="text"
-          placeholder="PIN"
-          maxlength="4"
-          class="login__input login__input--pin"
-        />
-        <button class="login__btn">&rarr;</button>
-      </form>
+      <div class="login__div">
+        <i class="fas fa-question-circle fa-4x tooltip">
+          <div class="tooltiptext">
+            <p>Usuários para testar</p>
+            <p>rd: 1111</p>
+            <p>jd: 2222</p>
+            <p>teste 1</p>
+          </div>
+        </i>
+        <form class="login">
+          <input
+            type="text"
+            placeholder="usuário"
+            class="login__input login__input--user"
+          />
+          <input
+            type="text"
+            placeholder="PIN"
+            maxlength="4"
+            class="login__input login__input--pin"
+          />
+          <button class="login__btn">&rarr;</button>
+        </form>
+      </div>
     </nav>
 
     <!-- teste modal -->

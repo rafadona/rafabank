@@ -29,6 +29,11 @@ nav {
   /* padding: 0 2rem; */
 }
 
+.login__div {
+  display: flex;
+  gap: 1rem;
+}
+
 .nav__start {
   display: flex;
   justify-content: flex-start;
@@ -345,6 +350,44 @@ h2 {
 }
 
 /* teste modal */
+
+/* teste tooltip */
+
+.tooltip {
+  position: relative;
+}
+.tooltip .tooltiptext {
+  font-family: "Poppins", sans-serif;
+  visibility: hidden;
+  /* width: 12.5rem; */
+  background-color: #303030;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 6px;
+  padding: 2rem;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-top: 1rem;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 25%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #303030 transparent;
+}
+/* teste tooltip */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
