@@ -381,7 +381,7 @@ h2 {
   content: " ";
   position: absolute;
   bottom: 100%; /* At the top of the tooltip */
-  left: 25%;
+  left: 23%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
@@ -520,5 +520,12 @@ h2 {
   .modal {
     top: 0;
     left: 10vw;
+  }
+
+  .tooltip .tooltiptext {
+    text-align: center;
+  }
+  .tooltip .tooltiptext::after {
+    left: 28%;
   }
 }
